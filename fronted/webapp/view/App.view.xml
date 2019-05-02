@@ -3,7 +3,9 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	<Panel headerText="{i18n>panelHeaderText}" class="sapUiResponsiveMargin" width="auto">
 		<content>
+			<!-- > It calls the i18n model to take the value <-->
 			<Label text="{i18n>firstName}" class="sapUiSmallMargin"/>
+			<!-- > It calls the value define in model from index.js <-->
 			<Input value="{/firstName}" valueLiveUpdate="true" width="200px" enabled="{/enabled}"/>
 			<Label text="{i18n>lastName}" class="sapUiSmallMargin"/>
 			<Input value="{/lastName}" valueLiveUpdate="true" width="200px" enabled="{/enabled}"/>
