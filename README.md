@@ -1,2 +1,2 @@
 # LMTSAPUI5
-LMT for SAPUI5
+LMT for SAPUI5 project
