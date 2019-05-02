@@ -4,7 +4,7 @@ sap.ui.require([
 	"sap/ui/model/resource/ResourceModel"
 ], function (JSONModel, XMLView, ResourceModel) {
 	"use strict";
-
+	//
 	// Attach an anonymous function to the SAPUI5 'init' event
 	sap.ui.getCore().attachInit(function () {
 		// Create a JSON model from an object literal
