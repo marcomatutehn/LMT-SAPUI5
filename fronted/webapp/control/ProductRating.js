@@ -2,9 +2,8 @@ sap.ui.define([
 	"sap/ui/core/Control",
 	"sap/m/RatingIndicator",
 	"sap/m/Label",
-	"sap/m/Button",
-	"sap/ui/core/InvisibleText"
-], function (Control, RatingIndicator, Label, Button, InvisibleText) {
+	"sap/m/Button"
+], function (Control, RatingIndicator, Label, Button) {
 	"use strict";
 
 	return Control.extend("sap.ui.demo.walkthrough.control.ProductRating", {
@@ -16,11 +15,7 @@ sap.ui.define([
 			aggregations: {
 				_rating: {type: "sap.m.RatingIndicator", multiple: false, visibility: "hidden"},
 				_label: {type: "sap.m.Label", multiple: false, visibility: "hidden"},
-				_button: {type: "sap.m.Button", multiple: false, visibility: "hidden"},
-				_invText1: {type: "sap.ui.core.InvisibleText", multiple: false, visibility: "hidden"},
-				_invText2: {type: "sap.ui.core.InvisibleText", multiple: false, visibility: "hidden"},
-				_invText3: {type: "sap.ui.core.InvisibleText", multiple: false, visibility: "hidden"},
-				_invText4: {type: "sap.ui.core.InvisibleText", multiple: false, visibility: "hidden"}
+				_button: {type: "sap.m.Button", multiple: false, visibility: "hidden"}
 			},
 			events: {
 				change: {
@@ -32,31 +27,18 @@ sap.ui.define([
 		},
 
 		init: function () {
-			var invText1 = new InvisibleText({text:"{i18n>ratingIndicatorLabel}"});
-			var invText2 = new InvisibleText({text:"{i18n>ratingIndicatorDescription}"});
-			var invText3 = new InvisibleText({text:"{i18n>rateButtonLabel}"});
-			var invText4 = new InvisibleText({text:"{i18n>rateButtonDescription}"});
-			this.setAggregation("_invText1", invText1);
-			this.setAggregation("_invText2", invText2);
-			this.setAggregation("_invText3", invText3);
-			this.setAggregation("_invText4", invText4);
-
 			this.setAggregation("_rating", new RatingIndicator({
 				value: this.getValue(),
 				iconSize: "2rem",
 				visualMode: "Half",
-				liveChange: this._onRate.bind(this),
-				ariaLabelledBy: invText1,
-				ariaDescribedBy: invText2
+				liveChange: this._onRate.bind(this)
 			}));
 			this.setAggregation("_label", new Label({
 				text: "{i18n>productRatingLabelInitial}"
 			}).addStyleClass("sapUiSmallMargin"));
 			this.setAggregation("_button", new Button({
 				text: "{i18n>productRatingButton}",
-				press: this._onSubmit.bind(this),
-				ariaLabelledBy: invText3,
-				ariaDescribedBy: invText4
+				press: this._onSubmit.bind(this)
 			}).addStyleClass("sapUiTinyMarginTopBottom"));
 		},
 
@@ -105,10 +87,6 @@ sap.ui.define([
 			oRM.renderControl(oControl.getAggregation("_rating"));
 			oRM.renderControl(oControl.getAggregation("_label"));
 			oRM.renderControl(oControl.getAggregation("_button"));
-			oRM.renderControl(oControl.getAggregation("_invText1"));
-			oRM.renderControl(oControl.getAggregation("_invText2"));
-			oRM.renderControl(oControl.getAggregation("_invText3"));
-			oRM.renderControl(oControl.getAggregation("_invText4"));
 			oRM.write("</div>");
 		}
 	});
