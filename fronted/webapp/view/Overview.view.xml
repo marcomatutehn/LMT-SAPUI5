@@ -1,16 +1,53 @@
 <mvc:View
 	controllerName="sap.ui.demo.walkthrough.controller.App"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
 	<Page title="{i18n>homePageTitle}">
-		<headerContent>
+		<IconTabBar
+			id="idIconTabBarNoIcons"
+			expanded="{device>/isNoPhone}"
+			class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter
+					text="Info">
+					<Text text="Info content goes here ..." />
+				</IconTabFilter>
+				<IconTabFilter
+					text="Attachments">
+					<Text text="Attachments go here ..." />
+				</IconTabFilter>
+				<IconTabFilter
+					text="Notes">
+					<Text text="Notes go here ..." />
+				</IconTabFilter>
+				<IconTabFilter
+					text="People">
+					<Text text="People content goes here ..." />
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+		<headerContent>		
 			<Button
-				icon="sap-icon://hello-world"
-				press=".onOpenDialog"/>
+				icon="sap-icon://hello-world"				
+				press=".onOpenDialog"/> 
+			<Button
+				icon="sap-icon://hello-world"			
+				press=".onOpenDialog"/> 
+			<Button
+				icon="sap-icon://hello-world"				
+				press=".onOpenDialog"/> 
+			<Button
+				icon="sap-icon://hello-world"				
+				press=".onOpenDialog"/> 
+			<Button
+				icon="sap-icon://hello-world"			
+				press=".onOpenDialog"/> 
 		</headerContent>
 		<content>
 			<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
-			<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.InvoiceList"/>
+			<!--<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.InvoiceList"/> -->
 		</content>
 	</Page>
 </mvc:View>

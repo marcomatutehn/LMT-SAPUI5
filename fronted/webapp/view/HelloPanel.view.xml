@@ -1,12 +1,46 @@
 <mvc:View
 	controllerName="sap.ui.demo.walkthrough.controller.HelloPanel"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	class="viewPadding">
 	<Panel
 		headerText="{i18n>helloPanelTitle}"
 		class="sapUiResponsiveMargin"
 		width="auto">
 		<content>
+		
+		<l:VerticalLayout
+				width="100%"
+				class="gridWrapper">
+			<l:Grid
+					containerQuery="true"
+					defaultSpan="XL8 L8 M8">
+				<html:div class="exampleDiv">
+					<Page
+						title="Grid 1">	
+					</Page>
+				</html:div>
+				<html:div class="exampleDiv">
+					<Page
+						title="Grid 2">
+					</Page>
+				</html:div>
+				<html:div class="exampleDiv">
+					
+				</html:div>
+				<html:div class="exampleDiv">
+					
+				</html:div>
+			</l:Grid>
+		</l:VerticalLayout>
+
+		
+
+
+		<!--<l:Grid defaultSpan="L12 M12 S12" hSpacing="2" width="auto">
 			<Button
 				id="helloDialogButton"
 				icon="sap-icon://world"
@@ -24,6 +58,52 @@
 			<FormattedText
 				htmlText="Hello {/recipient/name}"
 				class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+
+			<l:content>
+				<f:Form id="FormDisplay354" minWidth="1024" maxContainerCols="2">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanL="4" labelSpanM="3" emptySpanL="2" emptySpanM="3" columnsL="1" columnsM="1" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="">
+						<f:fields>
+							<Button text="Button1" type="Accept" />
+							<Button text="Button2" type="Reject" />
+							<Button text="Button3" type="None" />
+						</f:fields>
+						</f:FormElement>
+						<f:FormElement label="">
+						<f:fields>
+							<Button text="Button4" type="Accept" />
+							<Button text="Button5" type="Reject" />
+						</f:fields>
+						</f:FormElement>
+					</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+				</f:Form>
+			</l:content>
+		</l:Grid>-->
+			<!--<Button
+				id="helloDialogButton"
+				icon="sap-icon://world"
+				text="{i18n>openDialogButtonText}"
+				press=".onOpenDialog"
+				class="sapUiSmallMarginEnd"/>
+			<Button
+				text="{i18n>showHelloButtonText}"
+				press=".onShowHello"
+				class="myCustomButton"/>
+			<Input
+				value="{/recipient/name}"
+				valueLiveUpdate="true"
+				width="60%"/>
+			<FormattedText
+				htmlText="Hello {/recipient/name}"
+				class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+		-->
 		</content>
 	</Panel>
 </mvc:View>
