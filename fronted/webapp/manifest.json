@@ -1,7 +1,7 @@
 {
 	"_version": "1.12.0",
 	"sap.app": {
-		"id": "sap.ui.demo.walkthrough",
+		"id": "sap.ui.demo.nav",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -10,11 +10,12 @@
 			"version": "1.0.0"
 		},
 		"dataSources": {
-			"invoiceRemote": {
-				"uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+			"employeeRemote": {
+				"uri": "/here/goes/your/serviceUrl/",
 				"type": "OData",
 				"settings": {
-					"odataVersion": "2.0"
+					"odataVersion": "2.0",
+					"localUri" : "localService/metadata.xml"
 				}
 			}
 		}
@@ -26,93 +27,70 @@
 			"tablet": true,
 			"phone": true
 		}
-	},
+  	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.ui.demo.walkthrough.view.App",
+			"viewName": "sap.ui.demo.nav.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
 		},
-		"libs": {
-			"sap.ui.layout": {}
-		},
 		"dependencies": {
-			"minUI5Version": "1.60",
+			"minUI5Version": "1.30",
 			"libs": {
-				"sap.m": {}
+				"sap.m": {},
+				"sap.ui.core": {}
 			}
 		},
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sap.ui.demo.walkthrough.i18n.i18n"
+					"bundleName": "sap.ui.demo.nav.i18n.i18n"
 				}
 			},
-			"invoice": {
-				"dataSource": "invoiceRemote"
+			"": {
+				"dataSource": "employeeRemote"
 			}
-		},
-		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
 		},
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "sap.ui.demo.walkthrough.view",
+				"viewPath": "sap.ui.demo.nav.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
+				"transition": "slide",
+				"bypassed": {
+					"target": "notFound"
+				},
 				"async": true
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "overview",
-					"target": "overview"
-				},
-				{
-					"pattern": "detail/{invoicePath}",
-					"name": "detail",
-					"target": "detail"
-				},
-				{
-					"pattern": "",
-					"name": "createNewAccount",
-					"target": "createNewAccount"
-				},
-				{
-					"pattern": "",
-					"name": "accountInfoPage",
-					"target": "accountInfoPage"
-				},
-				{
-					"pattern": "",
-					"name": "trialAccountPage",
-					"target": "trialAccountPage"
-				}
-			],
+			"routes": [{
+				"pattern": "",
+				"name": "appHome",
+				"target": "home"
+			}, {
+				"pattern": "employees",
+				"name": "employeeList",
+				"target": "employees"
+			}],
 			"targets": {
-				"overview": {
-					"viewId": "overview",
-					"viewName": "Overview"
+				"home": {
+					"viewId": "home",
+					"viewName": "Home",
+					"viewLevel" : 1
 				},
-				"createNewAccount": {
-					"viewId": "createNewAccount",
-					"viewName": "CreateNewAccount"
+				"notFound": {
+					"viewId": "notFound",
+					"viewName": "NotFound",
+					"transition": "show"
 				},
-				"accountInfoPage": {
-					"viewId": "accountInfoPage",
-					"viewName": "AccountInfoPage"
-				},
-				"trialAccountPage": {
-					"viewId": "trialAccountPage",
-					"viewName": "TrialAccountPage"
+				"employees": {
+					"viewId": "employeeList",
+					"viewPath": "sap.ui.demo.nav.view.employee",
+					"viewName": "EmployeeList",
+					"viewLevel" : 2
 				}
 			}
 		}

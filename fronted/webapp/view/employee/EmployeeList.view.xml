@@ -3,14 +3,13 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page
-		id="CreteNewAccount"
-		title="Create new"
-		
+		id="employeeListPage"
+		title="{i18n>EmployeeList}"
 		showNavButton="true"
 		navButtonPress=".onNavBack"
 		class="sapUiResponsiveContentPadding">
 		<content>
-			<List id="createNewAccount" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
+			<List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
 				<items>
 					<StandardListItem
 						title="{FirstName} {LastName}"

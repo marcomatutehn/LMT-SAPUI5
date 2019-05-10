@@ -26,11 +26,12 @@ sap.ui.define([
 		},
 
 		//Tiles Functions
-		onPresscreateNewAccount : function(evt) {
-			var oRouter = UIComponent.getRouterFor(this);
-			oRouter.navTo("createNewAccount");
-
-			//MessageToast.show("Create New Account");
+		presscreateNewAccount : function(evt) {
+		
+			// show message
+			MessageToast.show("Create New Account");
+			//var oRouter = UIComponent.getRouterFor(this);
+			//oRouter.navTo("employeeList");
 		},
 
 		onPressaccountInfoPage : function(evt) {
@@ -42,6 +43,9 @@ sap.ui.define([
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.navTo("trialAccountPage");
 		},
+		press : function(evt) {
+			MessageToast.show("The GenericTile is pressed.");
+		}
 	
 	});
 

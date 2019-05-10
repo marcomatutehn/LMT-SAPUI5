@@ -1,9 +1,9 @@
 <mvc:View
-	controllerName="sap.ui.demo.walkthrough.controller.App"
+	controllerName="sap.ui.demo.nav.controller.App"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">
 	<Shell>
-		<App class="myAppDemoWT" id="app"/>
+		<App id="app"/>
 	</Shell>
 </mvc:View>
