@@ -20,3 +20,7 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 .myAppDemoWTProductRating .sapMRI {
 	vertical-align: initial;
 }
+
+.tileLayout {
+	float: left;
+}

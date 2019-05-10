@@ -80,6 +80,21 @@
 					"pattern": "detail/{invoicePath}",
 					"name": "detail",
 					"target": "detail"
+				},
+				{
+					"pattern": "",
+					"name": "createNewAccount",
+					"target": "createNewAccount"
+				},
+				{
+					"pattern": "",
+					"name": "accountInfoPage",
+					"target": "accountInfoPage"
+				},
+				{
+					"pattern": "",
+					"name": "trialAccountPage",
+					"target": "trialAccountPage"
 				}
 			],
 			"targets": {
@@ -87,9 +102,17 @@
 					"viewId": "overview",
 					"viewName": "Overview"
 				},
-				"detail": {
-					"viewId": "detail",
-					"viewName": "Detail"
+				"createNewAccount": {
+					"viewId": "createNewAccount",
+					"viewName": "CreateNewAccount"
+				},
+				"accountInfoPage": {
+					"viewId": "accountInfoPage",
+					"viewName": "AccountInfoPage"
+				},
+				"trialAccountPage": {
+					"viewId": "trialAccountPage",
+					"viewName": "TrialAccountPage"
 				}
 			}
 		}

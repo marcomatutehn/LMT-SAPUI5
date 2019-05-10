@@ -1,7 +1,12 @@
 sap.ui.define([
+	"jquery.sap.global",
 	"sap/ui/core/mvc/Controller",
+	"sap/ui/core/UIComponent",
+	"sap/ui/model/json/JSONModel",
 	"sap/m/MessageToast"
-], function (Controller, MessageToast) {
+	
+	
+], function (Jquery,Controller, MessageToast) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.walkthrough.controller.HelloPanel", {
@@ -18,7 +23,26 @@ sap.ui.define([
 
 		onOpenDialog : function () {
 			this.getOwnerComponent().openHelloDialog();
-		}
+		},
+
+		//Tiles Functions
+		onPresscreateNewAccount : function(evt) {
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("createNewAccount");
+
+			//MessageToast.show("Create New Account");
+		},
+
+		onPressaccountInfoPage : function(evt) {
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("accountInfoPage");
+		},
+
+		onPresstrialAccountPage : function(evt) {
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("trialAccountPage");
+		},
+	
 	});
 
 });
