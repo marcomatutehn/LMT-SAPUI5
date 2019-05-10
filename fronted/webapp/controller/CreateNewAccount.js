@@ -3,8 +3,9 @@ sap.ui.define([
 ], function (BaseController) {
 	"use strict";
 
-	return BaseController.extend("sap.ui.demo.nav.controller.EmployeeList", {
+	return BaseController.extend("sap.ui.demo.nav.controller.CreateNewAccount", {
 
+		/*	
 		onDisplayNotFound : function () {
 			// display the "notFound" target without changing the hash
 			this.getRouter().getTargets().display("notFound", {
@@ -21,6 +22,7 @@ sap.ui.define([
 				fromTarget : "home"
 			});
 		}
+		*/
 	});
 
 });

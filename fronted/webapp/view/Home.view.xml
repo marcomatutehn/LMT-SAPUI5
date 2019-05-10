@@ -7,6 +7,23 @@
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	class="viewPadding">
 	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">	
+	<headerContent>		
+		<Button
+			icon="sap-icon://hello-world"				
+			press=".onOpenDialog"/> 
+		<Button
+			icon="sap-icon://hello-world"			
+			press=".onOpenDialog"/> 
+		<Button
+			icon="sap-icon://hello-world"				
+			press=".onOpenDialog"/> 
+		<Button
+			icon="sap-icon://hello-world"				
+			press=".onOpenDialog"/> 
+		<Button
+			icon="sap-icon://hello-world"			
+			press=".onOpenDialog"/> 
+	</headerContent>
 		<l:VerticalLayout>
 			<l:content>
 			<Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
@@ -28,7 +45,7 @@
 					<GenericTile 
 							class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
 							header="Account Info Page"
-							press="onPressaccountInfoPage">
+							press="onNavToEmployees">
 							<TileContent  footer="SAP">
 								<ImageContent src="sap-icon://home-share" />
 							</TileContent>
@@ -56,6 +73,5 @@
 			</FlexBox>
 			</l:content>
 		</l:VerticalLayout>
-		
 	</Page>
 </mvc:View>

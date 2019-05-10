@@ -14,8 +14,11 @@ sap.ui.define([
 
 		onNavToEmployees : function () {
 			this.getRouter().navTo("employeeList");
-		}
+		},
 
+		onNavCreateNewAccount : function () {
+			this.getRouter().navTo("employeeList");
+		}
 	});
 
 });

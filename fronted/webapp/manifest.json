@@ -74,6 +74,10 @@
 				"pattern": "employees",
 				"name": "employeeList",
 				"target": "employees"
+			}, {
+				"pattern": "createNew",
+				"name": "createNewAccount",
+				"target": "createNew"
 			}],
 			"targets": {
 				"home": {
@@ -88,8 +92,14 @@
 				},
 				"employees": {
 					"viewId": "employeeList",
-					"viewPath": "sap.ui.demo.nav.view.employee",
+					"viewPath": "sap.ui.demo.nav.view",
 					"viewName": "EmployeeList",
+					"viewLevel" : 2
+				},
+				"createNew": {
+					"viewId": "createNewAccount",
+					"viewPath": "sap.ui.demo.nav.view",
+					"viewName": "CreateNewAccount",
 					"viewLevel" : 2
 				}
 			}
