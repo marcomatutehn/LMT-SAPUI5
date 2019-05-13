@@ -5,24 +5,7 @@ sap.ui.define([
 
 	return BaseController.extend("sap.ui.demo.nav.controller.CreateNewAccount", {
 
-		/*	
-		onDisplayNotFound : function () {
-			// display the "notFound" target without changing the hash
-			this.getRouter().getTargets().display("notFound", {
-				fromTarget : "home"
-			});
-		},
-
-		onNavToEmployees : function () {
-			this.getRouter().navTo("employeeList");
-		},
-
-		onNavToCreateNewAccount : function () {
-			this.getRouter().navTo("createNewAccount", {
-				fromTarget : "home"
-			});
-		}
-		*/
+		
 	});
 
 });

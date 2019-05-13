@@ -1,9 +1,9 @@
 {
-  "name": "NavigationTutorial",
+  "name": "EmployeeDirectory",
   "private": true,
   "version": "1.0.0",
   "author": "SAP SE",
-  "description": "UI5 Demo App - Navigation Tutorial",
+  "description": "UI5 Demo App - Employee Directory",
   "dependencies": {
     "@openui5/sap.m": "^1",
     "@openui5/sap.ui.core": "^1",

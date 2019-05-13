@@ -12,13 +12,16 @@ sap.ui.define([
 			});
 		},
 
+		//method to display new user
 		onNavToEmployees : function () {
 			this.getRouter().navTo("employeeList");
 		},
 
-		onNavCreateNewAccount : function () {
-			this.getRouter().navTo("employeeList");
+		//method to display info page
+		onNavToEmployeeOverview : function (oEvent) {
+			this.getRouter().navTo("employeeOverview");
 		}
+
 	});
 
 });

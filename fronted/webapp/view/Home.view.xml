@@ -6,7 +6,7 @@
 	xmlns:f="sap.ui.layout.form"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	class="viewPadding">
-	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">	
+	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding sapUiPageHeaderBackground">
 	<headerContent>		
 		<Button
 			icon="sap-icon://hello-world"				
@@ -24,10 +24,8 @@
 			icon="sap-icon://hello-world"			
 			press=".onOpenDialog"/> 
 	</headerContent>
-		<l:VerticalLayout>
+	<l:VerticalLayout>
 			<l:content>
-			<Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
-			<Button id="employeeListBtn" text="{i18n>ShowEmployeeList}" press=".onNavToEmployees" class="sapUiTinyMarginEnd"/>
 			<FlexBox
 				height="auto"
 				alignItems="Start"
@@ -44,8 +42,8 @@
 
 					<GenericTile 
 							class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-							header="Account Info Page"
-							press="onNavToEmployees">
+							header="Account History"
+							press="onNavToEmployeeOverview">
 							<TileContent  footer="SAP">
 								<ImageContent src="sap-icon://home-share" />
 							</TileContent>
@@ -61,9 +59,8 @@
 
 					<GenericTile 
 							class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-							header="Trial Account Page"
-							type="Navigation"
-							press="onPresstrialAccountPage">
+							header="Account Info"
+							press="onNavInfoPage">
 							<TileContent footer="Current Quarter">
 								<ImageContent src="sap-icon://home-share" />
 							</TileContent>
@@ -73,5 +70,7 @@
 			</FlexBox>
 			</l:content>
 		</l:VerticalLayout>
+	
+		
 	</Page>
 </mvc:View>

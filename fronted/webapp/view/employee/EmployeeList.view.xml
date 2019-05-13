@@ -1,22 +1,215 @@
 <mvc:View
 	controllerName="sap.ui.demo.nav.controller.employee.EmployeeList"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
 	<Page
 		id="employeeListPage"
-		title="{i18n>EmployeeList}"
+		title="New Account"
 		showNavButton="true"
 		navButtonPress=".onNavBack"
 		class="sapUiResponsiveContentPadding">
-		<content>
-			<List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
+			
+		<VBox class="sapUiSmallMargin">
+			<f:Form id="FormToolbar"
+				editable="true"
+				ariaLabelledBy="Title1">
+				<f:toolbar>
+					<Toolbar id="TB1">
+						<Title id="Title1" text="General Info" level="H4" titleStyle="H4"/>
+						<ToolbarSpacer />
+						
+					</Toolbar>
+				</f:toolbar>
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="4"
+						labelSpanL="3"
+						labelSpanM="4"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="0"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						columnsXL="2"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				
+				<f:formContainers>
+					<f:FormContainer ariaLabelledBy="Title2">
+						<f:formElements>
+							<f:FormElement label="*ID">
+								<f:fields>
+									<Input value="ID" id="id"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="*First Name">
+								<f:fields>
+									<Input value="First Name" id="firstName"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Middle Name">
+								<f:fields>
+									<Input value="Middle Name" id="middleName"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="*Last Name">
+								<f:fields>
+									<Input value="Last Name" id="lastName"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="*Birth Data">
+								<f:fields>
+									<Input value="MMM dd, yyyy" id="birthData"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="*Email">
+								<f:fields>
+									<Input value="Email" id="email"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				
+				</f:formContainers>
+	
+			</f:Form>
+
+			<f:Form id="FormToolbar1"
+				editable="true"
+				ariaLabelledBy="Title1">
+				<f:toolbar>
+					<Toolbar id="TB2">
+						<Title id="Title2" text="Localization Info" level="H4" titleStyle="H4"/>
+						<ToolbarSpacer />
+						
+					</Toolbar>
+				</f:toolbar>
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="4"
+						labelSpanL="3"
+						labelSpanM="4"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="0"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						columnsXL="2"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+
+				<f:formContainers>
+					<f:FormContainer ariaLabelledBy="Title3">
+						<f:formElements>
+							<f:FormElement label="*Country">
+						
+								<f:fields>
+									<Input value="Country" id="country"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="*State">
+								<f:fields>
+									<Input value="State" id="state"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="*City">
+								<f:fields>
+									<Input value="City" id="city"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="*Addres Line 1">
+								<f:fields>
+									<Input value="Addres Line" id="addresLine1"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Addres Line 2">
+								<f:fields>
+									<Input value="Addres Line 2" id="addresLine2"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="*ZIP/Postal Code">
+								<f:fields>
+									<Input value="Zip/ Postal code" id="zipPostalCode"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>		
+			</f:Form>
+
+			<f:Form id="FormToolbar2"
+				editable="true"
+				ariaLabelledBy="Title2"
+				>
+				<f:toolbar>
+					<Toolbar id="TB3">
+						<Title id="Title3" text="Account" level="H4" titleStyle="H4"/>
+						<ToolbarSpacer />	
+					</Toolbar>
+				</f:toolbar>
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="4"
+						labelSpanL="3"
+						labelSpanM="4"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="0"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						columnsXL="2"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+
+				<f:formContainers>
+					<f:FormContainer ariaLabelledBy="Title4">
+						<f:formElements>
+							<f:FormElement label="*Account Type">
+								<f:fields>
+									<Input value="Account Type" id="accountType"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>		
+			</f:Form>
+
+			<FlexBox
+				height="auto"
+				alignItems="Center"
+				justifyContent="Start">
 				<items>
-					<StandardListItem
-						title="{FirstName} {LastName}"
-						iconDensityAware="false"
-						iconInset="false"/>
+
+					<Button text="Save"					
+					ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+					class="sapUiContentPadding">
+						<layoutData>
+							<FlexItemData growFactor="1" />
+						</layoutData>
+					</Button>
+					<Button text="Cancel"					
+							ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+							class="sapUiContentPadding">
+						<layoutData>
+							<FlexItemData growFactor="1" />
+						</layoutData>
+					</Button>
+
 				</items>
-			</List>
-		</content>
+			</FlexBox>
+
+			
+		</VBox>
 	</Page>
 </mvc:View>

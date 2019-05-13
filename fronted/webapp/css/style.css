@@ -24,3 +24,9 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 .tileLayout {
 	float: left;
 }
+
+.btnSave {
+	align-content: center;
+	align-self: auto;
+}
+
